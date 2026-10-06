@@ -1,1 +1,35 @@
 
+# stellar.toml — SEP-1
+# Host at: https://<YOUR_HOME_DOMAIN>/.well-known/stellar.toml
+# Required response headers:
+#   Access-Control-Allow-Origin: *
+#   Content-Type: text/plain
+
+VERSION = "2.7.0"
+NETWORK_PASSPHRASE = "Test SDF Network ; September 2015"
+
+# Accounts you control (issuer, and distributor if you use one)
+ACCOUNTS = [
+  "<ISSUER_G_ADDRESS>",
+  # "<DISTRIBUTOR_G_ADDRESS>",
+]
+
+[DOCUMENTATION]
+ORG_NAME = "Securitize"
+ORG_URL = "https://securitize.io"
+ORG_DESCRIPTION = "Securitize issued test token on Stellar"
+# ORG_LOGO = "https://<YOUR_HOME_DOMAIN>/logo.png"
+# ORG_OFFICIAL_EMAIL = "<email>"
+# ORG_SUPPORT_EMAIL = "<email>"
+
+[[CURRENCIES]]
+code = "VOLORO"
+issuer = "<ISSUER_G_ADDRESS>"
+contract = "<SAC_C_ADDRESS>"   # stellar contract id asset --asset VOLORO:<ISSUER_G_ADDRESS> --network testnet
+status = "test"
+display_decimals = 7
+name = "VOLORO"
+desc = "Securitize issued test token on Stellar"
+is_asset_anchored = false
+# image = "https://<YOUR_HOME_DOMAIN>/voloro.png"
+# conditions = "Holding and transfer restricted to authorized (KYC'd) accounts."
